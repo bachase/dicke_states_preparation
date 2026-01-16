@@ -6,7 +6,7 @@ A Dicke state <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\left&space;|&space;D^5_4&space;\right&space;\rangle&space;=&space;\frac{1}{\sqrt{5}}&space;\left&space;(&space;\left&space;|&space;11110&space;\right&space;\rangle&space;&plus;&space;\left&space;|&space;11101&space;\right&space;\rangle&space;&plus;&space;\left&space;|&space;11011&space;\right&space;\rangle&space;&plus;&space;\left&space;|&space;10111&space;\right&space;\rangle&space;&plus;&space;\left&space;|&space;01111&space;\right&space;\rangle&space;\right&space;)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\left&space;|&space;D^5_4&space;\right&space;\rangle&space;=&space;\frac{1}{\sqrt{5}}&space;\left&space;(&space;\left&space;|&space;11110&space;\right&space;\rangle&space;&plus;&space;\left&space;|&space;11101&space;\right&space;\rangle&space;&plus;&space;\left&space;|&space;11011&space;\right&space;\rangle&space;&plus;&space;\left&space;|&space;10111&space;\right&space;\rangle&space;&plus;&space;\left&space;|&space;01111&space;\right&space;\rangle&space;\right&space;)" title="\left | D^5_4 \right \rangle = \frac{1}{\sqrt{5}} \left ( \left | 11110 \right \rangle + \left | 11101 \right \rangle + \left | 11011 \right \rangle + \left | 10111 \right \rangle + \left | 01111 \right \rangle \right )" /></a>
 
-Dicke states find a wide range of applications, from quantum metrology to quantum combinatorial optimization problems. For this reason, their efficient preparation is a quite important matter. In their work, Bärtschi and Eidenbenz propose a circuit which uses <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\mathcal{O}(n)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\mathcal{O}(kn)" title="\mathcal{O}(n)" /></a> gates, and has depth <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\mathcal{O}(n)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\mathcal{O}(n)" title="\mathcal{O}(n)" /></a>, which holds even for Linear Nearest Neighbor architectures. 
+Dicke states find a wide range of applications, from quantum metrology to quantum combinatorial optimization problems. For this reason, their efficient preparation is a quite important matter. In their work, Bärtschi and Eidenbenz propose a circuit which uses <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\mathcal{O}(n)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\mathcal{O}(kn)" title="\mathcal{O}(n)" /></a> gates, and has depth <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\mathcal{O}(n)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\mathcal{O}(n)" title="\mathcal{O}(n)" /></a>, which holds even for Linear Nearest Neighbor architectures.
 
 The approach has a very interesting and beautiful inductive nature, which was explored in the implementation found in this repository. We gave some details in the code, but please refer to the original paper to fully understand what's going on --- it's worth it!
 
@@ -18,3 +18,13 @@ This repository contains the following files:
 
 - `dicke_states_preparation_details.ipynb`: notebook file containing all functions used in the implementation of the algorithm. For every major building block of the algorithm, I added some mathematical details in the markdown cell above the code. This may help the understanding of the implementation, but for further details, please refer to the paper. At the end of the notebook, you can find some particular examples of Dicke states, which demonstrate that the algorithm and its implementation work for arbitrary `n` and `k`;
 - `dicke_states.py`: python file with all functions used to implement the algorithm. This may be imported as a module, whenever you need to construct Dicke states in your application. I hope to add this to Qiskit's application modules.
+
+
+### Running
+This is an update of the source repository to work with more recent package versions and uses `uv` as the package manager.
+
+To run locally, be sure to install `uv` https://docs.astral.sh/uv/ and then run
+```
+$ uv sync # to install dependencies
+$ uv run jupyter notebook # If runnning notebook
+```
